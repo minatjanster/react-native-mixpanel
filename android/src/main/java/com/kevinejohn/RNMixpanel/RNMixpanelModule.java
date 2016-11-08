@@ -196,6 +196,11 @@ public class RNMixpanelModule extends ReactContextBaseJavaModule implements Life
     }
 
     @ReactMethod
+    public void initPushHandling(String senderID) {
+        mixpanel.getPeople().initPushHandling(senderID);
+    }
+
+    @ReactMethod
     public void reset() {
         mixpanel.reset();
         mixpanel.flush();
