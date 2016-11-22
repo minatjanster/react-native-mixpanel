@@ -107,4 +107,10 @@ RCT_EXPORT_METHOD(reset) {
     [mixpanel reset];
 }
 
+// Add push device token
+RCT_EXPORT_METHOD(addPushDeviceToken:(NSString *)deviceToken) {
+    NSData* deviceTokenData = [deviceToken dataUsingEncoding:NSUTF8StringEncoding];
+    [mixpanel.people addPushDeviceToken:deviceTokenData];
+}
+
 @end
